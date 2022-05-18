@@ -89,3 +89,151 @@ Desktop: Gnome 3
   * Eclipse 3.8.1
   * IntelliJ Idea Community - 2019.1
 * Python: PyCharm Community - 2019.1
+
+---
+
+## Desafios
+
+### Problema 1 - O jogo da reprovação
+
+Este problema foi adaptado de: [SPOJ.com - Problema PLACAR](https://br.spoj.com/problems/PLACAR/)
+
+
+Prof. Kirk está muito preocupado com a queda do nível de atenção de seus estudantes. Tentou,
+criativo com é todas as técnicas pedagógicas conhecidas para resolver este problema sem
+sucesso. Aluno é bicho complicado.
+
+Como última esperança o prof. Kirk resolveu fazer uma competição entre os alunos. Com uma
+condição crítica, o último colocado será sumariamente reprovado. Ficar em último não é uma
+opção. A competição consistiu em 10 problemas de computação que deveriam ser resolvidos no
+prazo de 30 dias. No prazo todos os alunos enviaram seus trabalhos.
+
+A classificação seria realizada de acordo com o número de problemas corretamente resolvidos
+e os alunos seriam ordenados do maior para o menor. Em caso de empate estes seriam
+resolvidos de acordo com a ordem alfabética dos nomes. Nesta turma não existem homônimos.
+Esta condição fez com que alunos com nomes iniciados nas últimas letras do alfabeto se
+esforçassem muito nas tarefas, e não compartilhassem suas soluções. Sua tarefa neste
+problema é escrever um programa que lê os resultados dos alunos do Prof. Kirk e imprime o
+nome do aluno reprovado.
+
+#### Entrada
+
+A entrada será composta por um conjunto de textos, um para cada instância da competição. A
+primeira linha de cada instância consiste em um inteiro $n (1 <= n <= 100)$ indicando o número
+de alunos naquela instância. Cada uma das $n$ linhas seguintes contém o nome do aluno e o
+número de problemas corretamente resolvidos por ele. O nome consiste em uma sequência de
+letras e espaços $[a-zA-Z\\s]$ com no máximo 30 símbolos. A entrada termina com final de arquivo.
+
+Exemplo:
+
+```text
+4
+Frank de Alcantara 9
+Paulo Azambuja da Silva 10
+Marcela Aristides 2
+Marcela da Silva 2
+```
+
+#### Saída
+
+Para cada instância, você deverá imprimir um identificador Instancia k, onde k é o número da
+instância atual. Na linha seguinte imprima o nome do infeliz reprovado. Após cada instância
+imprima uma linha em branco.
+
+Exemplo:
+
+```
+Instância 1
+Marcela da Silva
+```
+
+### Problema 2 - Onde construir um aeroporto
+
+Este problema foi adaptado de: [icpc2017.pdf](https://icpc.global/worldfinals/problems/2017 ACM-ICPC World Finals/icpc2017.pdf)
+
+A nação tropical da Piconésia é famosa por suas belas praias, vegetação luxuriante, café e
+chocolate e, principalmente pelo clima magnifico. Este paraíso está sendo considerado como
+sede da Final Mundial da Maratona de Programação (ou talvez apenas como destino de férias
+para o Comitê Gestor). Neste paraíso existe apenas um pequeno problema, chegar a ilha é muito
+difícil.
+
+Atualmente a forma mais rápida de se chegar a Piconésia toma três dias e exige a combinação
+de meios de transporte que podem incluir, barcos de pesca, kayakes e submarinos restaurados
+da Segunda Grande Guerra. O Ministério da Cultura e Turismo da Piconésia, para permitir
+execução de eventos e alavancar o turismo está considerando a construção de um aeroporto. O
+que leva a uma constatação interessante: quanto mais longa a pista, maior o avião que poderá
+utilizá-la. O que quer dizer que a Piconésia deseja construir a pista mais longa possível. Mas,
+infelizmente, seus engenheiros não foram capazes de resolver este problema. Cabe a você
+ajudar, ou o Comitê Gestor não poderá passar as férias na Piconésia. Digo, a Final da Maratona
+de Programação não poderá ser realizada na Piconésia.
+
+Para este problema, vamos modelar as fronteiras da Piconésia como um polígono e, dado este
+polígono, você precisará computar a mais longa pista de pouso possível dentro do território
+dado. A pista de pouso não pode cruzar o oceano e não pode ter curvas, ou desvios. Mas, pode
+tocar as fronteiras da nação e mesmo correr ao longo destas fronteiras. Um exemplo pode ser
+visto na Figura 1.
+
+![Figura 1](./img/figura1.png)
+
+#### Entrada
+
+A entrada começa com uma linha contendo um inteiro n, (3 ≤ n ≤ 200) que especifica o
+número de vértices do polígono que representa a Piconésia. Esta linha será seguida por n linhas
+cada uma contendo dos inteiros x, y (|x|, |y| ≤ 106) que indicam as coordenadas (x, y) dos
+vértices do polígono em sentido contrário ao dos ponteiros de um relógio. O polígono é simples,
+o que quer dizer que seus vértices são distintos e nenhuma das arestas do polígono intercepta
+ou toca outra aresta exceto nos vértices em comum entre arestas. Adicionalmente é fácil
+perceber que, neste caso, duas arestas consecutivas são colineares.
+
+Exemplo:
+
+```
+7
+0 20
+40 0
+40 20
+70 50
+50 70
+30 50
+0 50
+```
+
+#### Saída
+
+Mostrar o maior seguimento de reta possível que cabe dentro do polígono dado com erro
+absoluto, ou relativo de no máximo 10−6.
+
+Exemplo:
+
+`76.157731059`
+
+| Entrada | Saída |
+| --- | --- |
+| 3 <br> 0 2017 <br> -2017 -2017 <br> 2017 0 | 4510.149110617 |
+
+### Problema 3 - Fatores Primos
+
+Este problema foi adaptado de: [SPOJ.com - Problem CFATORES](https://br.spoj.com/problems/CFATORES/)
+
+Escreva um programa que compute o número de diferentes fatores primos de um inteiro
+positivo.
+
+| Entrada | Saída |
+| --- | --- |
+| 289384 | 289384:3 |
+| 930887 | 930887:2 |
+| 692778 | 692778:5 |
+| 636916 | 636916:4 |
+| 747794 | 747794:3 |
+
+
+#### Entrada
+
+A entrada consistirá em uma série de inteiros positivos. Cada linha possui somente um número.
+O valor máximo de um número é 1000000. A entrada termina em uma linha contendo o inteiro
+zero e este zero não deve ser considerado como parte do conjunto de teste.
+
+#### Saída
+
+O programa deve imprimir cada resultado em uma linha diferente, seguindo o formado dado no
+exemplo de saída apresentado a seguir:
