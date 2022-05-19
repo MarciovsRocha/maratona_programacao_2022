@@ -1,0 +1,13 @@
+4
+Frank de Alcantara 9
+Paulo Azambuja da Silva 10
+Marcela Aristides 2
+Marcela da Silva 2
+
+6
+Frank de Alcantara 9
+Paulo Azambuja da Silva 10
+Marcela 2
+Marcela da Silva 2
+Joao Paulo 5
+Ana bela 10
