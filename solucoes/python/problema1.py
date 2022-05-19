@@ -1,27 +1,33 @@
 #!/usr/bin/python
 
-input_file="maratona_programacao_2022\\solucoes\\input\\problema1.txt"
-f = open(input_file,'r')
-lines = f.readlines()
+input_file="..\\input\\problema1.txt"
+lines = open(input_file,'r').readlines()
 
+# node class used by BTree
 class Node():    
     def __init__(self, info: tuple) -> None:
-        self.name = info[0]
+        self.name = str(info[0])
         self.qtd = int(info[1])
         self.rchild = None
         self.lchild = None    
 
+# simple binary search tree
 class BTree():
     def __init__(self) -> None:
         self.node = None
-
-    def get_last(self):
+    
+    # retorna o último colo
+    def get_minor(self):
         c_node = self.node
         while None != c_node.lchild:
             c_node = c_node.lchild
         return (c_node.name,c_node.qtd)
         
-    def add_node(self, newNode: Node):        
+    # funcao para adicionar um novo nó na arvore de acordo com seu peso
+    # este por sua vez é definido pela qtd de problemas resolvidos
+    # em caso de empate entre a qtd, o desempate é realizado por 
+    # ordem alfabética do nome 
+    def add_node(self, newNode: Node) -> None:
         if None == self.node:
             self.node = newNode
             return            
@@ -88,15 +94,9 @@ def alfabetica(str1, str2):
     # df 0 -> primeira string é menor
     # df 1 -> segunda string é menor
     return 0==df
-    
-# função para criar uma hash a partir de 
-# cada ca
-def hash(x):
-    cod = ''
-    for char in x:
-        cod+=str(ord(char))
-    return int(cod)
 
+# funcao para limpar as linhas brutas extraindo
+# o nome e a quantidade de probelmas resolvidos
 def get_info(x):
     x = x.replace('\n','').split(' ')
     n_problems = x[len(x)-1]
@@ -106,6 +106,8 @@ def get_info(x):
     #id = hash(name)
     return (name[:len(name)-1],n_problems)
 
+# funcao que recebe as linhas brutas de uma instância 
+# limpa as linhas e preenche a árvore binária de 
 def verificar_instancia(l: list):
     tree = BTree()
     index = 0
@@ -113,8 +115,10 @@ def verificar_instancia(l: list):
         info = get_info(l[index])
         tree.add_node(Node(info))
         index+=1    
-    return tree.get_last()
+    return tree.get_minor()
 
+# funcao para receber as linhas brutas do arquivo
+# e separalas em grupos de instâncias
 def separar_instancias(lines: list):
     index = 0
     instancias = []
